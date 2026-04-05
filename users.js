@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://responsibilities-drugs-scale-diff.trycloudflare.com';
+const BASE_URL = 'https://cam-kits-nevertheless-suse.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements

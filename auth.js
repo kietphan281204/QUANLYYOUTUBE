@@ -1,4 +1,4 @@
-const BASE_URL = 'https://responsibilities-drugs-scale-diff.trycloudflare.com';
+const BASE_URL = 'https://cam-kits-nevertheless-suse.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
