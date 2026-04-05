@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=auth.html">
+    <title>Đang chuyển hướng...</title>
+    <script>
+        // Nếu đã đăng nhập thì vào trang admin, chưa thì vào auth.html
+        if (localStorage.getItem('admin_token')) {
+            window.location.href = 'admin.html';
+        } else {
+            window.location.href = 'auth.html';
+        }
+    </script>
+</head>
+<body>
+    <p>Đang chuyển hướng đến trang đăng nhập...</p>
+</body>
+</html>
