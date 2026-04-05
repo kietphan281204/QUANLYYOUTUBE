@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://refugees-dressed-reed-conducted.trycloudflare.com';
+const BASE_URL = 'https://privileges-appliance-warriors-engineering.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements

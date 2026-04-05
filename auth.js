@@ -1,4 +1,4 @@
-const BASE_URL = 'https://refugees-dressed-reed-conducted.trycloudflare.com';
+const BASE_URL = 'https://privileges-appliance-warriors-engineering.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
