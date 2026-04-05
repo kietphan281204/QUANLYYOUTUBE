@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const API_URL = 'https://refugees-dressed-reed-conducted.trycloudflare.com/api/auth';
+const BASE_URL = 'https://refugees-dressed-reed-conducted.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements
@@ -68,7 +68,7 @@ function showLoading(show) {
 async function fetchUsers() {
     showLoading(true);
     try {
-        const res = await fetch(API_URL);
+        const res = await fetch(`${BASE_URL}/api/admin/users`);
         if (!res.ok) throw new Error('Network error or server down');
         const data = await res.json();
         allUsers = data;
@@ -122,7 +122,7 @@ window.resetPassword = async function(id, username) {
     
     showLoading(true);
     try {
-        const res = await fetch(`${API_URL}/${id}/reset-password`, {
+        const res = await fetch(`${BASE_URL}/api/admin/users/${id}/reset-password`, {
             method: 'PUT'
         });
         

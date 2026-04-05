@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const API_URL = 'https://refugees-dressed-reed-conducted.trycloudflare.com/api/auth';
+const BASE_URL = 'https://refugees-dressed-reed-conducted.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
@@ -78,7 +78,7 @@ function showToast(message, type = 'success') {
 async function fetchVideos() {
     showLoading(true);
     try {
-        const res = await fetch('https://refugees-dressed-reed-conducted.trycloudflare.com/api/admin/videos');
+        const res = await fetch(`${BASE_URL}/api/admin/videos`);
         if (!res.ok) throw new Error('Network error or server down');
         const data = await res.json();
         allVideos = data;
@@ -187,7 +187,7 @@ form.addEventListener('submit', async (e) => {
     
     showLoading(true);
     try {
-        const url = isEdit ? `${API_URL}/${id}` : API_URL;
+        const url = isEdit ? `${BASE_URL}/api/videos/${id}` : `${BASE_URL}/api/videos`;
         const method = isEdit ? 'PUT' : 'POST';
         
         const res = await fetch(url, {
@@ -227,7 +227,7 @@ window.deleteVideo = async function(id) {
     
     showLoading(true);
     try {
-        const res = await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+        const res = await fetch(`${BASE_URL}/api/videos/${id}`, { method: 'DELETE' });
         if (!res.ok) throw new Error('Không thể xóa video');
         
         showToast('Đã xóa video', 'success');
@@ -259,7 +259,7 @@ window.updateStatus = async function(id, status) {
     
     showLoading(true);
     try {
-        const res = await fetch(`${API_URL}/${id}/status`, {
+        const res = await fetch(`${BASE_URL}/api/videos/${id}/status`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ trang_thai: status, ly_do, admin_username })

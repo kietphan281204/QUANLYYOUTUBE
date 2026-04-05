@@ -41,7 +41,6 @@ function updateLinksAndPush(newUrl) {
             // Thay thế cả localhost hay link trycloudflare cũ
             content = content.replace(/http:\/\/localhost:3000/g, newUrl);
             content = content.replace(/https:\/\/[a-zA-Z0-9-]+\.trycloudflare\.com/g, newUrl);
-            content = content.replace(/const API_URL = '.*?';/g, `const API_URL = '${newUrl}/api/auth';`);
             content = content.replace(/const BASE_URL = '.*?';/g, `const BASE_URL = '${newUrl}';`);
             
             fs.writeFileSync(file, content);

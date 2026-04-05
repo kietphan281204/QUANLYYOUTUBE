@@ -1,4 +1,4 @@
-const API_URL = 'https://refugees-dressed-reed-conducted.trycloudflare.com/api/auth';
+const BASE_URL = 'https://refugees-dressed-reed-conducted.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
@@ -59,7 +59,7 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
     
     showLoading(true);
     try {
-        const res = await fetch(`${API_URL}/login`, {
+        const res = await fetch(`${BASE_URL}/api/auth/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, password })
@@ -98,7 +98,7 @@ document.getElementById('register-form').addEventListener('submit', async (e) =>
     
     showLoading(true);
     try {
-        const res = await fetch(`${API_URL}/register`, {
+        const res = await fetch(`${BASE_URL}/api/auth/register`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, password })
