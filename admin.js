@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://privileges-appliance-warriors-engineering.trycloudflare.com';
+const BASE_URL = 'https://responsibilities-drugs-scale-diff.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
