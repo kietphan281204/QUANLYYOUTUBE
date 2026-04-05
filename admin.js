@@ -118,7 +118,10 @@ function renderTable(data) {
         const tr = document.createElement('tr');
         
         // Use default thumbnail if none provided
-        const thumbStr = video.duong_dan_anh_bia || video.thumbnail || video.Thumbnail || 'https://via.placeholder.com/150x84?text=No+Thumb';
+        let thumbStr = video.duong_dan_anh_bia || video.thumbnail || video.Thumbnail || 'https://via.placeholder.com/150x84?text=No+Thumb';
+        if (!thumbStr.startsWith('http') && thumbStr !== 'https://via.placeholder.com/150x84?text=No+Thumb') {
+            thumbStr = thumbStr.startsWith('/') ? `${BASE_URL}${thumbStr}` : `${BASE_URL}/${thumbStr}`;
+        }
         const defaultThumb = 'https://via.placeholder.com/150x84?text=No+Thumb';
         
         const status = video.trang_thai || video.Trang_thai || 'cho_duyet';
@@ -131,8 +134,8 @@ function renderTable(data) {
 
         let videoUrl = video.duong_dan_video || video.url || '#';
         if (!videoUrl.startsWith('http') && videoUrl !== '#') {
-            // Make sure it starts with a slash so it loads from the backend's /uploads
-            videoUrl = videoUrl.startsWith('/') ? videoUrl : `/${videoUrl}`;
+            // Prepend BASE_URL to load from the actual backend
+            videoUrl = videoUrl.startsWith('/') ? `${BASE_URL}${videoUrl}` : `${BASE_URL}/${videoUrl}`;
         }
 
         tr.innerHTML = `
