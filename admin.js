@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const API_URL = 'http://localhost:3000/api/videos';
+const API_URL = 'https://refugees-dressed-reed-conducted.trycloudflare.com/api/auth';
 let allVideos = [];
 let currentFilter = 'all';
 
@@ -78,7 +78,7 @@ function showToast(message, type = 'success') {
 async function fetchVideos() {
     showLoading(true);
     try {
-        const res = await fetch('http://localhost:3000/api/admin/videos');
+        const res = await fetch('https://refugees-dressed-reed-conducted.trycloudflare.com/api/admin/videos');
         if (!res.ok) throw new Error('Network error or server down');
         const data = await res.json();
         allVideos = data;

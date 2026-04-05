@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/auth';
+const API_URL = 'https://refugees-dressed-reed-conducted.trycloudflare.com/api/auth';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

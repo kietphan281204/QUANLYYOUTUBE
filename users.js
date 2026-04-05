@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const API_URL = 'http://localhost:3000/api/admin/users';
+const API_URL = 'https://refugees-dressed-reed-conducted.trycloudflare.com/api/auth';
 let allUsers = [];
 
 // DOM Elements
