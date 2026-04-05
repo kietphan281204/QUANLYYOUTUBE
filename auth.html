@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xác thực Quản Trị - VIDEO1</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .auth-container {
+            background: var(--panel-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--panel-border);
+            padding: 3rem;
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .auth-header i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .auth-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .auth-header p {
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--panel-border);
+        }
+
+        .auth-tab {
+            flex: 1;
+            text-align: center;
+            padding: 1rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .auth-tab.active {
+            color: var(--primary);
+        }
+
+        .auth-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .auth-form {
+            display: none;
+            flex-direction: column;
+            gap: 1.5rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .auth-form.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-group label i {
+            color: var(--primary);
+            width: 16px;
+        }
+
+        .btn-full {
+            width: 100%;
+            justify-content: center;
+            padding: 1rem;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="auth-header">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h1>Quản Trị Viên</h1>
+            <p>Hệ thống kiểm duyệt video VIDEO1</p>
+        </div>
+
+        <div class="auth-tabs">
+            <div class="auth-tab active" onclick="switchTab('login')">Đăng Nhập</div>
+            <div class="auth-tab" onclick="switchTab('register')">Đăng Ký Mới</div>
+        </div>
+
+        <!-- Login Form -->
+        <form id="login-form" class="auth-form active">
+            <div class="form-group">
+                <label for="login-username"><i class="fa-solid fa-user"></i> Tên đăng nhập</label>
+                <input type="text" id="login-username" required placeholder="Nhập tên đăng nhập admin">
+            </div>
+            <div class="form-group">
+                <label for="login-password"><i class="fa-solid fa-lock"></i> Mật khẩu</label>
+                <input type="password" id="login-password" required placeholder="Nhập mật khẩu">
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Đăng Nhập <i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="register-form" class="auth-form">
+            <div class="form-group">
+                <label for="reg-username"><i class="fa-solid fa-user-plus"></i> Tên đăng nhập</label>
+                <input type="text" id="reg-username" required placeholder="Tạo tên đăng nhập mới">
+            </div>
+            <div class="form-group">
+                <label for="reg-password"><i class="fa-solid fa-lock"></i> Mật khẩu</label>
+                <input type="password" id="reg-password" required placeholder="Tạo mật khẩu">
+            </div>
+            <div class="form-group">
+                <label for="reg-secret"><i class="fa-solid fa-key"></i> Mã bảo vệ (Secret Key)</label>
+                <input type="password" id="reg-secret" required placeholder="Mã đặc biệt để được làm admin">
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Đăng Ký Admin</button>
+        </form>
+
+        <div id="toast-container"></div>
+        <div class="loading" id="global-loading">
+            <div class="spinner"></div>
+            <p>Đang xử lý...</p>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

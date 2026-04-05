@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Video - Admin Dashboard</title>
+    <!-- Import stylesheet -->
+    <link rel="stylesheet" href="index.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="brand">
+            <i class="fa-solid fa-play-circle"></i>
+            VIDEO1 Admin
+        </div>
+        <nav>
+            <a href="#" class="nav-item active">
+                <i class="fa-solid fa-table-list"></i>
+                Quản lý Video
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-chart-pie"></i>
+                Thống kê
+            </a>
+            <a href="users.html" class="nav-item">
+                <i class="fa-solid fa-users"></i>
+                Người dùng
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                Cài đặt
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="header">
+            <h1 class="page-title">Bảng điều khiển Video</h1>
+            <div class="user-profile">
+                <!-- User Profile can be added here -->
+                <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: Outfit;">
+                    A
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon blue"><i class="fa-solid fa-video"></i></div>
+                <div class="stat-info">
+                    <h3 id="total-videos">0</h3>
+                    <p>Tổng Video</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon pink"><i class="fa-solid fa-eye"></i></div>
+                <div class="stat-info">
+                    <h3>12.4K</h3>
+                    <p>Lượt xem</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green"><i class="fa-solid fa-check-circle"></i></div>
+                <div class="stat-info">
+                    <h3 style="color: var(--success);">SQL</h3>
+                    <p id="db-status">Đang kết nối...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions-bar">
+            <div class="search-box">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="search-input" placeholder="Tìm kiếm video...">
+            </div>
+            <button class="btn btn-primary" onclick="openModal()">
+                <i class="fa-solid fa-plus"></i> Thêm Video Mới
+            </button>
+        </div>
+
+        <!-- Table -->
+        <!-- Tab Filter -->
+            <div style="margin-bottom: 20px; display: flex; gap: 10px;">
+                <button class="filter-btn active" data-status="all" style="padding: 8px 16px; border:none; border-radius:4px; background: var(--primary); color:white; cursor:pointer; font-weight:bold;">Tất cả</button>
+                <button class="filter-btn" data-status="cho_duyet" style="padding: 8px 16px; border:none; border-radius:4px; background: #334155; color:white; cursor:pointer;">Chờ duyệt</button>
+                <button class="filter-btn" data-status="da_duyet" style="padding: 8px 16px; border:none; border-radius:4px; background: #334155; color:white; cursor:pointer;">Đã duyệt</button>
+                <button class="filter-btn" data-status="tu_choi" style="padding: 8px 16px; border:none; border-radius:4px; background: #334155; color:white; cursor:pointer;">Từ chối</button>
+            </div>
+
+            <div class="data-table card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>THUMBNAIL</th>
+                            <th>TIÊU ĐỀ / MÔ TẢ</th>
+                            <th>NGƯỜI ĐĂNG</th>
+                            <th>URL</th>
+                            <th>TRẠNG THÁI</th>
+                            <th>THAO TÁC</th>
+                        </tr>
+                    </thead>
+                <tbody id="video-table-body">
+                    <!-- Data will be populated here via JS -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modal for Create/Update -->
+    <div class="modal-overlay" id="video-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">Thêm Video Mới</h2>
+                <button class="close-btn" onclick="closeModal()"><i class="fa-solid fa-times"></i></button>
+            </div>
+            <form id="video-form">
+                <input type="hidden" id="video-id">
+                
+                <div class="form-group">
+                    <label for="title">Tiêu đề Video *</label>
+                    <input type="text" id="title" required placeholder="Nhập tiêu đề video">
+                </div>
+                
+                <div class="form-group">
+                    <label for="url">URL (Đường dẫn) *</label>
+                    <input type="url" id="url" required placeholder="https://youtube.com/...">
+                </div>
+                
+                <div class="form-group">
+                    <label for="thumbnail">Thumbnail URL</label>
+                    <input type="url" id="thumbnail" placeholder="https://.../image.jpg (tuỳ chọn)">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Mô tả</label>
+                    <textarea id="description" placeholder="Nhập mô tả video"></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Hủy</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-save"></i> Lưu Video</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <div class="loading" id="global-loading">
+        <div class="spinner"></div>
+        <p>Đang tải dữ liệu...</p>
+    </div>
+
+    <!-- Script -->
+    <script src="admin.js"></script>
+</body>
+</html>

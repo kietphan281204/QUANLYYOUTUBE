@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Người Dùng - Admin Dashboard</title>
+    <!-- Import stylesheet -->
+    <link rel="stylesheet" href="index.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="brand">
+            <i class="fa-solid fa-play-circle"></i>
+            VIDEO1 Admin
+        </div>
+        <nav>
+            <a href="admin.html" class="nav-item">
+                <i class="fa-solid fa-table-list"></i>
+                Quản lý Video
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-chart-pie"></i>
+                Thống kê
+            </a>
+            <a href="users.html" class="nav-item active">
+                <i class="fa-solid fa-users"></i>
+                Người dùng
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                Cài đặt
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="header">
+            <h1 class="page-title">Quản lý người dùng</h1>
+            <div class="user-profile">
+                <!-- User Profile can be added here -->
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="data-table card" style="margin-top: 20px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>AVATAR</th>
+                        <th>TÊN ĐĂNG NHẬP</th>
+                        <th>EMAIL</th>
+                        <th>NGÀY TẠO</th>
+                        <th>THAO TÁC</th>
+                    </tr>
+                </thead>
+                <tbody id="user-table-body">
+                    <!-- Data will be populated here via JS -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <div id="toast-container"></div>
+
+    <div class="loading" id="global-loading">
+        <div class="spinner"></div>
+        <p>Đang tải dữ liệu...</p>
+    </div>
+
+    <!-- Script -->
+    <script src="users.js"></script>
+</body>
+</html>
