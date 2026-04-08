@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://dealtime-linux-orange-arthritis.trycloudflare.com';
+const BASE_URL = 'https://additional-planned-mills-affiliate.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 

@@ -1,4 +1,4 @@
-const BASE_URL = 'https://dealtime-linux-orange-arthritis.trycloudflare.com';
+const BASE_URL = 'https://additional-planned-mills-affiliate.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
