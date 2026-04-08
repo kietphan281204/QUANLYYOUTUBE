@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://additional-planned-mills-affiliate.trycloudflare.com';
+const BASE_URL = 'https://mixer-impact-trainer-write.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
