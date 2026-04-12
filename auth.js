@@ -1,4 +1,4 @@
-const BASE_URL = 'https://buyers-enhancement-shaw-ascii.trycloudflare.com';
+const BASE_URL = 'https://organisms-loops-brandon-yields.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
