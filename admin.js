@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://organisms-loops-brandon-yields.trycloudflare.com';
+const BASE_URL = 'https://particularly-rpg-collect-investments.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
