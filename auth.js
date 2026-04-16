@@ -1,4 +1,4 @@
-const BASE_URL = 'https://particularly-rpg-collect-investments.trycloudflare.com';
+const BASE_URL = 'https://anytime-configuring-common-genre.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
