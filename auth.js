@@ -1,4 +1,4 @@
-const BASE_URL = 'https://paris-chest-improve-humidity.trycloudflare.com';
+const BASE_URL = 'https://vocational-ratios-range-comfortable.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
