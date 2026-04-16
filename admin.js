@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://convergence-measurement-valve-formerly.trycloudflare.com';
+const BASE_URL = 'https://paris-chest-improve-humidity.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 

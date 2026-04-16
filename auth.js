@@ -1,4 +1,4 @@
-const BASE_URL = 'https://convergence-measurement-valve-formerly.trycloudflare.com';
+const BASE_URL = 'https://paris-chest-improve-humidity.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
