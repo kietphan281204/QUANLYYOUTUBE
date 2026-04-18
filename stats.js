@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://promote-studios-jack-automatic.trycloudflare.com';
+const BASE_URL = 'https://latinas-athletes-tissue-mesa.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
