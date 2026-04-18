@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://another-italia-dark-eugene.trycloudflare.com';
+const BASE_URL = 'https://clark-role-bennett-award.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
