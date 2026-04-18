@@ -16,17 +16,18 @@ const dbConfig = {
 async function check() {
     try {
         await sql.connect(dbConfig);
-        console.log('--- TABLES ---');
-        const tables = await sql.query('SELECT name FROM sys.tables');
-        console.log(tables.recordset.map(t => t.name).join(', '));
+        
+        console.log('\n--- COLUMN NAMES (video) ---');
+        const videoCols = await sql.query("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'video'");
+        console.log(videoCols.recordset.map(c => c.COLUMN_NAME).join(', '));
 
-        console.log('\n--- COLUMN NAMES (thong_ke) ---');
-        const columns = await sql.query("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'thong_ke'");
-        console.log(columns.recordset.map(c => c.COLUMN_NAME).join(', '));
+        console.log('\n--- COLUMN NAMES (luot_thich) ---');
+        const likeCols = await sql.query("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'luot_thich'");
+        console.log(likeCols.recordset.map(c => c.COLUMN_NAME).join(', '));
 
-        console.log('\n--- DATA (thong_ke top 5) ---');
-        const data = await sql.query('SELECT TOP 5 * FROM thong_ke ORDER BY ngay DESC');
-        console.log(JSON.stringify(data.recordset, null, 2));
+        console.log('\n--- COLUMN NAMES (binh_luan) ---');
+        const commentCols = await sql.query("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'binh_luan'");
+        console.log(commentCols.recordset.map(c => c.COLUMN_NAME).join(', '));
 
         process.exit(0);
     } catch (err) {

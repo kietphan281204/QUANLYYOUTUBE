@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://performing-stamps-pictures-recording.trycloudflare.com';
+const BASE_URL = 'https://never-eleven-decades-vacation.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements

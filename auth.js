@@ -1,4 +1,4 @@
-const BASE_URL = 'https://performing-stamps-pictures-recording.trycloudflare.com';
+const BASE_URL = 'https://never-eleven-decades-vacation.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
