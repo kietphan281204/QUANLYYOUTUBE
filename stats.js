@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://desktop-philip-packet-zero.trycloudflare.com';
+const BASE_URL = 'https://prix-tropical-eating-governing.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
