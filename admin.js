@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://quarters-say-realty-shown.trycloudflare.com';
+const BASE_URL = 'https://montreal-apparently-lectures-united.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 

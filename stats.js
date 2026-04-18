@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://quarters-say-realty-shown.trycloudflare.com';
+const BASE_URL = 'https://montreal-apparently-lectures-united.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
@@ -58,6 +58,8 @@ async function fetchStats() {
     }
 }
 
+let myChart; // Global chart instance
+
 // Function to render chart using Chart.js
 function renderChart(dailyData) {
     const ctx = document.getElementById('statsChart').getContext('2d');
@@ -68,7 +70,9 @@ function renderChart(dailyData) {
     const likes = dailyData.map(d => d.likes);
     const comments = dailyData.map(d => d.comments);
 
-    new Chart(ctx, {
+    if (myChart) myChart.destroy();
+
+    myChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: labels,
@@ -146,6 +150,24 @@ function renderChart(dailyData) {
         }
     });
 }
+
+// Function to toggle datasets visibility
+window.toggleDataset = function(index) {
+    if (!myChart) return;
+    
+    const isVisible = myChart.isDatasetVisible(index);
+    const legendItems = document.querySelectorAll('.legend-item');
+    
+    if (isVisible) {
+        myChart.hide(index);
+        legendItems[index].style.opacity = '0.3';
+        legendItems[index].style.textDecoration = 'line-through';
+    } else {
+        myChart.show(index);
+        legendItems[index].style.opacity = '1';
+        legendItems[index].style.textDecoration = 'none';
+    }
+};
 
 // Utils
 function showToast(message, type = 'success') {

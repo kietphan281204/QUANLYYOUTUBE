@@ -83,13 +83,13 @@
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
                 <h2 style="font-family: Outfit; font-size: 1.25rem;">Thống Kê Theo Ngày (60 Ngày Gần Nhất)</h2>
                 <div style="display: flex; gap: 15px;">
-                    <span style="display: flex; align-items: center; gap: 5px; font-size: 0.85rem; color: var(--text-muted);">
+                    <span class="legend-item" onclick="toggleDataset(0)" style="display: flex; align-items: center; gap: 5px; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; transition: all 0.3s;">
                         <span style="width: 12px; height: 12px; border-radius: 50%; background: #6366f1;"></span> Lượt Xem
                     </span>
-                    <span style="display: flex; align-items: center; gap: 5px; font-size: 0.85rem; color: var(--text-muted);">
+                    <span class="legend-item" onclick="toggleDataset(1)" style="display: flex; align-items: center; gap: 5px; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; transition: all 0.3s;">
                         <span style="width: 12px; height: 12px; border-radius: 50%; background: #ec4899;"></span> Lượt Thích
                     </span>
-                    <span style="display: flex; align-items: center; gap: 5px; font-size: 0.85rem; color: var(--text-muted);">
+                    <span class="legend-item" onclick="toggleDataset(2)" style="display: flex; align-items: center; gap: 5px; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; transition: all 0.3s;">
                         <span style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b;"></span> Bình Luận
                     </span>
                 </div>
