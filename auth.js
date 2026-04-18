@@ -1,4 +1,4 @@
-const BASE_URL = 'https://clark-role-bennett-award.trycloudflare.com';
+const BASE_URL = 'https://performing-stamps-pictures-recording.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

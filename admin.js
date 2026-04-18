@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://clark-role-bennett-award.trycloudflare.com';
+const BASE_URL = 'https://performing-stamps-pictures-recording.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
