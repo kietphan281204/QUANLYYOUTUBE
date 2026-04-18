@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://clause-tune-meter-sequences.trycloudflare.com';
+const BASE_URL = 'https://promote-studios-jack-automatic.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
@@ -61,17 +61,29 @@ async function fetchStats() {
     }
 }
 
+let allVideoData = []; // Store fetched videos globally
+let currentSort = { column: 'luot_xem', direction: 'desc' };
+
 // Function to render video rankings table
 function renderVideoRanking(videos) {
+    if (videos) allVideoData = videos;
     const tbody = document.getElementById('video-ranking-body');
     tbody.innerHTML = '';
     
-    if (!videos || videos.length === 0) {
+    if (!allVideoData || allVideoData.length === 0) {
         tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 2rem;">Chưa có dữ liệu video</td></tr>';
         return;
     }
 
-    videos.forEach(video => {
+    // Sort data
+    const sortedData = [...allVideoData].sort((a, b) => {
+        const valA = a[currentSort.column] || 0;
+        const valB = b[currentSort.column] || 0;
+        if (currentSort.direction === 'asc') return valA - valB;
+        return valB - valA;
+    });
+
+    sortedData.forEach(video => {
         const tr = document.createElement('tr');
         
         let thumbUrl = video.duong_dan_anh_bia || 'https://via.placeholder.com/150x84?text=No+Thumb';
@@ -94,13 +106,26 @@ function renderVideoRanking(videos) {
             <td>
                 <span style="font-weight: 500; color: var(--primary);">${video.nguoi_dang || 'Ẩn danh'}</span>
             </td>
-            <td style="text-align: center; font-weight: 600; family: Outfit;">${(video.luot_xem || 0).toLocaleString()}</td>
+            <td style="text-align: center; font-weight: 600; font-family: Outfit;">${(video.luot_xem || 0).toLocaleString()}</td>
             <td style="text-align: center; color: #ec4899; font-weight: 600;">${(video.so_luot_thich || 0).toLocaleString()}</td>
             <td style="text-align: center; color: #f59e0b; font-weight: 600;">${(video.so_binh_luan || 0).toLocaleString()}</td>
         `;
         tbody.appendChild(tr);
     });
 }
+
+// Function to handle table sorting
+window.toggleSort = function(column) {
+    if (currentSort.column === column) {
+        currentSort.direction = currentSort.direction === 'desc' ? 'asc' : 'desc';
+    } else {
+        currentSort.column = column;
+        currentSort.direction = 'desc';
+    }
+    
+    // Update icons (optional improvement)
+    renderVideoRanking();
+};
 
 let myChart; // Global chart instance
 

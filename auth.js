@@ -1,4 +1,4 @@
-const BASE_URL = 'https://clause-tune-meter-sequences.trycloudflare.com';
+const BASE_URL = 'https://promote-studios-jack-automatic.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

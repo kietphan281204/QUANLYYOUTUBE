@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://clause-tune-meter-sequences.trycloudflare.com';
+const BASE_URL = 'https://promote-studios-jack-automatic.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
