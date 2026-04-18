@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thống Kê Hệ Thống - Admin Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="brand">
+            <i class="fa-solid fa-play-circle"></i>
+            VIDEO1 Admin
+        </div>
+        <nav>
+            <a href="admin.html" class="nav-item">
+                <i class="fa-solid fa-table-list"></i>
+                Quản lý Video
+            </a>
+            <a href="stats.html" class="nav-item active">
+                <i class="fa-solid fa-chart-pie"></i>
+                Thống kê
+            </a>
+            <a href="users.html" class="nav-item">
+                <i class="fa-solid fa-users"></i>
+                Người dùng
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                Cài đặt
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="header">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <a href="admin.html" class="btn btn-secondary" style="padding: 0.5rem 1rem;"><i class="fa-solid fa-arrow-left"></i> Quay lại</a>
+                <div>
+                    <h1 class="page-title">Thống Kê Toàn Bộ</h1>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Xem chi tiết thống kê của hệ thống trong 60 ngày gần nhất</p>
+                </div>
+            </div>
+            <div class="user-profile">
+                <!-- User Profile added via JS -->
+            </div>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon blue"><i class="fa-solid fa-eye"></i></div>
+                <div class="stat-info">
+                    <p>LƯỢT XEM VIDEO</p>
+                    <h3 id="stat-total-views">0</h3>
+                    <span style="font-size: 0.8rem; color: var(--success);"><i class="fa-solid fa-caret-up"></i> 0.0%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon pink"><i class="fa-solid fa-heart"></i></div>
+                <div class="stat-info">
+                    <p>LƯỢT THÍCH</p>
+                    <h3 id="stat-total-likes">0</h3>
+                    <span style="font-size: 0.8rem; color: var(--success);"><i class="fa-solid fa-caret-up"></i> 0.0%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green"><i class="fa-solid fa-comment"></i></div>
+                <div class="stat-info">
+                    <p>BÌNH LUẬN</p>
+                    <h3 id="stat-total-comments">0</h3>
+                    <span style="font-size: 0.8rem; color: var(--success);"><i class="fa-solid fa-caret-up"></i> 0.0%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="table-card" style="padding: 2rem; margin-top: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 style="font-family: Outfit; font-size: 1.25rem;">Thống Kê Theo Ngày (60 Ngày Gần Nhất)</h2>
+                <div style="display: flex; gap: 15px;">
+                    <span style="display: flex; align-items: center; gap: 5px; font-size: 0.85rem; color: var(--text-muted);">
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #6366f1;"></span> Lượt Xem
+                    </span>
+                    <span style="display: flex; align-items: center; gap: 5px; font-size: 0.85rem; color: var(--text-muted);">
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #ec4899;"></span> Lượt Thích
+                    </span>
+                    <span style="display: flex; align-items: center; gap: 5px; font-size: 0.85rem; color: var(--text-muted);">
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b;"></span> Bình Luận
+                    </span>
+                </div>
+            </div>
+            <div style="height: 400px; width: 100%;">
+                <canvas id="statsChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <div id="toast-container"></div>
+    <div class="loading" id="global-loading">
+        <div class="spinner"></div>
+        <p>Đang tổng hợp dữ liệu...</p>
+    </div>
+
+    <script src="stats.js"></script>
+</body>
+</html>

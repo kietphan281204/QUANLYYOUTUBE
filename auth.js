@@ -1,4 +1,4 @@
-const BASE_URL = 'https://pharmaceutical-julian-tmp-plates.trycloudflare.com';
+const BASE_URL = 'https://treat-operations-acknowledge-bryant.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

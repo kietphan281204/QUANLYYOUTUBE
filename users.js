@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://pharmaceutical-julian-tmp-plates.trycloudflare.com';
+const BASE_URL = 'https://treat-operations-acknowledge-bryant.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements

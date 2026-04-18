@@ -323,6 +323,43 @@ app.post('/api/auth/login', async (req, res) => {
     }
 });
 
+// GET OVERALL STATISTICS (Admin)
+app.get('/api/admin/stats/overall', async (req, res) => {
+    try {
+        const pool = await sql.connect(dbConfig);
+        
+        // 1. Get totals
+        const totalsResult = await pool.request().query(`
+            SELECT 
+                ISNULL(SUM(so_luot_xem), 0) as total_views, 
+                ISNULL(SUM(so_luot_thich), 0) as total_likes, 
+                ISNULL(SUM(so_binh_luan), 0) as total_comments 
+            FROM thong_ke
+        `);
+        
+        // 2. Get daily stats (last 60 days)
+        const dailyResult = await pool.request().query(`
+            SELECT 
+                CONVERT(VARCHAR(10), ngay, 120) as date,
+                SUM(so_luot_xem) as views,
+                SUM(so_luot_thich) as likes,
+                SUM(so_binh_luan) as comments
+            FROM thong_ke
+            WHERE ngay >= DATEADD(day, -60, GETDATE())
+            GROUP BY CONVERT(VARCHAR(10), ngay, 120)
+            ORDER BY date ASC
+        `);
+        
+        res.json({
+            totals: totalsResult.recordset[0],
+            daily: dailyResult.recordset
+        });
+    } catch (err) {
+        console.error('Error fetching admin stats:', err);
+        res.status(500).json({ error: 'Failed to fetch statistics' });
+    }
+});
+
 // Start Server
 app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
