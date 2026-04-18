@@ -32,7 +32,7 @@ cloudflareProcess.stderr.on('data', (data) => {
 });
 
 function updateLinksAndPush(newUrl) {
-    const filesToUpdate = ['auth.js', 'admin.js', 'users.js', 'index.html']; // Thêm file bạn cần vào đây
+    const filesToUpdate = ['auth.js', 'admin.js', 'users.js', 'stats.js', 'index.html']; // Thêm file bạn cần vào đây
     let updatedCount = 0;
 
     filesToUpdate.forEach(file => {
