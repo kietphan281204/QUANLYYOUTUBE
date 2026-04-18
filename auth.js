@@ -1,4 +1,4 @@
-const BASE_URL = 'https://studying-saves-merchandise-increases.trycloudflare.com';
+const BASE_URL = 'https://reaches-dear-close-cadillac.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

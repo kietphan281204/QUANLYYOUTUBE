@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://studying-saves-merchandise-increases.trycloudflare.com';
+const BASE_URL = 'https://reaches-dear-close-cadillac.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');

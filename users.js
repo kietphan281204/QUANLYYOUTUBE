@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://studying-saves-merchandise-increases.trycloudflare.com';
+const BASE_URL = 'https://reaches-dear-close-cadillac.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements
