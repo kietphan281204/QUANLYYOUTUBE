@@ -1,4 +1,4 @@
-const BASE_URL = 'https://agency-italic-sprint-brown.trycloudflare.com';
+const BASE_URL = 'https://quarters-say-realty-shown.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

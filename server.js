@@ -323,30 +323,36 @@ app.post('/api/auth/login', async (req, res) => {
     }
 });
 
-// GET OVERALL STATISTICS (Admin)
+// GET OVERALL STATISTICS (Admin) - Live Data from Source Tables
 app.get('/api/admin/stats/overall', async (req, res) => {
     try {
         const pool = await sql.connect(dbConfig);
         
-        // 1. Get totals
+        // 1. Get live totals from primary tables
         const totalsResult = await pool.request().query(`
             SELECT 
-                ISNULL(SUM(so_luot_xem), 0) as total_views, 
-                ISNULL(SUM(so_luot_thich), 0) as total_likes, 
-                ISNULL(SUM(so_binh_luan), 0) as total_comments 
-            FROM thong_ke
+                (SELECT ISNULL(SUM(luot_xem), 0) FROM video) as total_views,
+                (SELECT COUNT(*) FROM luot_thich) as total_likes,
+                (SELECT COUNT(*) FROM binh_luan) as total_comments
         `);
         
-        // 2. Get daily stats (last 60 days)
+        // 2. Get daily stats (Last 60 days)
+        // Grouping by date from transaction tables for Likes and Comments
+        // For Views, we still need to rely on the thong_ke snapshot table for historical daily data
         const dailyResult = await pool.request().query(`
             SELECT 
-                CONVERT(VARCHAR(10), ngay, 120) as date,
-                SUM(so_luot_xem) as views,
-                SUM(so_luot_thich) as likes,
-                SUM(so_binh_luan) as comments
-            FROM thong_ke
-            WHERE ngay >= DATEADD(day, -60, GETDATE())
-            GROUP BY CONVERT(VARCHAR(10), ngay, 120)
+                ISNULL(t.date, ISNULL(l.date, c.date)) as date,
+                ISNULL(t.views, 0) as views,
+                ISNULL(l.likes, 0) as likes,
+                ISNULL(c.comments, 0) as comments
+            FROM 
+                (SELECT CONVERT(VARCHAR(10), ngay, 120) as date, SUM(so_luot_xem) as views FROM [thong_ke] WHERE ngay >= DATEADD(day, -60, GETDATE()) GROUP BY CONVERT(VARCHAR(10), ngay, 120)) t
+            FULL OUTER JOIN 
+                (SELECT CONVERT(VARCHAR(10), ngay_tao, 120) as date, COUNT(*) as likes FROM luot_thich WHERE ngay_tao >= DATEADD(day, -60, GETDATE()) GROUP BY CONVERT(VARCHAR(10), ngay_tao, 120)) l
+            ON t.date = l.date
+            FULL OUTER JOIN 
+                (SELECT CONVERT(VARCHAR(10), ngay_tao, 120) as date, COUNT(*) as comments FROM binh_luan WHERE ngay_tao >= DATEADD(day, -60, GETDATE()) GROUP BY CONVERT(VARCHAR(10), ngay_tao, 120)) c
+            ON ISNULL(t.date, l.date) = c.date
             ORDER BY date ASC
         `);
         
@@ -355,8 +361,8 @@ app.get('/api/admin/stats/overall', async (req, res) => {
             daily: dailyResult.recordset
         });
     } catch (err) {
-        console.error('Error fetching admin stats:', err);
-        res.status(500).json({ error: 'Failed to fetch statistics' });
+        console.error('Error fetching admin live stats:', err);
+        res.status(500).json({ error: 'Failed to fetch statistics: ' + err.message });
     }
 });
 
