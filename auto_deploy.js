@@ -5,10 +5,18 @@ console.log("==========================================================");
 console.log("  HỆ THỐNG TỰ ĐỘNG CHẠY WEBSITE QUẢN TRỊ VÀ CẬP NHẬT LINK");
 console.log("==========================================================");
 
-// 1. Mở server ở một process riêng
+// 1. Dọn dẹp cổng 3000 trước khi chạy (chỉ tắt cái server cũ đang chiếm cổng)
+try {
+    console.log("\n[*] Đang dọn dẹp cổng 3000...");
+    const cmd = 'for /f "tokens=5" %a in (\'netstat -aon ^| findstr :3000\') do taskkill /f /pid %a';
+    execSync(cmd, { stdio: 'ignore', shell: 'cmd.exe' });
+} catch (e) {
+    // Không sao nếu cổng đã trống
+}
+
+// 2. Mở server
 console.log("\n[1/3] Đang khởi động Server cục bộ (Port 3000)...");
-const serverProcess = spawn('node', ['server.js'], { stdio: 'ignore', detached: true });
-serverProcess.unref();
+const serverProcess = spawn('node', ['server.js'], { stdio: 'inherit', shell: true });
 
 // 2. Mở Cloudflare Tunnel
 console.log("\n[2/3] Đang mở đường ống Cloudflare để lấy link xuyên thế giới...");

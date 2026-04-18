@@ -1,4 +1,4 @@
-const BASE_URL = 'https://reaches-dear-close-cadillac.trycloudflare.com';
+const BASE_URL = 'https://another-italia-dark-eugene.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
