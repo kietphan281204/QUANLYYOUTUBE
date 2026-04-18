@@ -1,4 +1,4 @@
-const BASE_URL = 'https://amd-floors-classified-nature.trycloudflare.com';
+const BASE_URL = 'https://desktop-philip-packet-zero.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

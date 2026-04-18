@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://amd-floors-classified-nature.trycloudflare.com';
+const BASE_URL = 'https://desktop-philip-packet-zero.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
