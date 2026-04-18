@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://hygiene-default-theta-tales.trycloudflare.com';
+const BASE_URL = 'https://pharmaceutical-julian-tmp-plates.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 

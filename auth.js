@@ -1,4 +1,4 @@
-const BASE_URL = 'https://hygiene-default-theta-tales.trycloudflare.com';
+const BASE_URL = 'https://pharmaceutical-julian-tmp-plates.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
