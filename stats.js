@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://montreal-apparently-lectures-united.trycloudflare.com';
+const BASE_URL = 'https://clause-tune-meter-sequences.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
@@ -50,12 +50,56 @@ async function fetchStats() {
         // Render Chart
         renderChart(data.daily);
         
+        // Render Video Ranking
+        renderVideoRanking(data.videos);
+        
     } catch (err) {
         console.error(err);
-        showToast('Không thể kết nối đến SQL Server: ' + err.message, 'error');
+        showToast('Lỗi tải dữ liệu: ' + err.message, 'error');
     } finally {
         showLoading(false);
     }
+}
+
+// Function to render video rankings table
+function renderVideoRanking(videos) {
+    const tbody = document.getElementById('video-ranking-body');
+    tbody.innerHTML = '';
+    
+    if (!videos || videos.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 2rem;">Chưa có dữ liệu video</td></tr>';
+        return;
+    }
+
+    videos.forEach(video => {
+        const tr = document.createElement('tr');
+        
+        let thumbUrl = video.duong_dan_anh_bia || 'https://via.placeholder.com/150x84?text=No+Thumb';
+        if (!thumbUrl.startsWith('http')) {
+            thumbUrl = thumbUrl.startsWith('/') ? `${BASE_URL}${thumbUrl}` : `${BASE_URL}/${thumbUrl}`;
+        }
+
+        tr.innerHTML = `
+            <td>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="${thumbUrl}" style="width: 100px; height: 56px; border-radius: 8px; object-fit: cover; background: #2a2d3e;" onerror="this.src='https://via.placeholder.com/150x84?text=Error'">
+                    <div>
+                        <div style="font-weight: 600; color: white;">${video.tieu_de || 'Không có tiêu đề'}</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted); max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                            ${video.mo_ta || 'Không có mô tả'}
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <span style="font-weight: 500; color: var(--primary);">${video.nguoi_dang || 'Ẩn danh'}</span>
+            </td>
+            <td style="text-align: center; font-weight: 600; family: Outfit;">${(video.luot_xem || 0).toLocaleString()}</td>
+            <td style="text-align: center; color: #ec4899; font-weight: 600;">${(video.so_luot_thich || 0).toLocaleString()}</td>
+            <td style="text-align: center; color: #f59e0b; font-weight: 600;">${(video.so_binh_luan || 0).toLocaleString()}</td>
+        `;
+        tbody.appendChild(tr);
+    });
 }
 
 let myChart; // Global chart instance

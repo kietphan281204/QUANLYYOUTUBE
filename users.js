@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://montreal-apparently-lectures-united.trycloudflare.com';
+const BASE_URL = 'https://clause-tune-meter-sequences.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements

@@ -98,6 +98,31 @@
                 <canvas id="statsChart"></canvas>
             </div>
         </div>
+        <!-- Video Ranking Table -->
+        <div class="table-card" style="margin-top: 2rem; margin-bottom: 3rem;">
+            <div style="padding: 1.5rem 2rem; border-bottom: 1px solid var(--panel-border); display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="font-family: Outfit; font-size: 1.25rem;">Xếp Hạng Video (Cao đến thấp)</h2>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <i class="fa-solid fa-sort-amount-down"></i> Sắp xếp theo Lượt xem
+                </div>
+            </div>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Video</th>
+                            <th>Người đăng</th>
+                            <th style="text-align: center;">Lượt xem</th>
+                            <th style="text-align: center;">Lượt thích</th>
+                            <th style="text-align: center;">Bình luận</th>
+                        </tr>
+                    </thead>
+                    <tbody id="video-ranking-body">
+                        <!-- Data will be populated here via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </main>
 
     <div id="toast-container"></div>

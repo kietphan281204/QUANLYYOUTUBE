@@ -1,4 +1,4 @@
-const BASE_URL = 'https://montreal-apparently-lectures-united.trycloudflare.com';
+const BASE_URL = 'https://clause-tune-meter-sequences.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

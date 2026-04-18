@@ -356,9 +356,26 @@ app.get('/api/admin/stats/overall', async (req, res) => {
             ORDER BY date ASC
         `);
         
+        // 3. Get detailed video list with stats
+        const videosResult = await pool.request().query(`
+            SELECT 
+                v.video_id, 
+                v.tieu_de, 
+                v.mo_ta,
+                v.luot_xem, 
+                v.duong_dan_anh_bia,
+                (SELECT COUNT(*) FROM luot_thich l WHERE l.video_id = v.video_id) as so_luot_thich,
+                (SELECT COUNT(*) FROM binh_luan c WHERE c.video_id = v.video_id) as so_binh_luan,
+                u.ten_dang_nhap as nguoi_dang
+            FROM video v
+            LEFT JOIN nguoi_dung u ON v.nguoi_dung_id = u.nguoi_dung_id
+            ORDER BY v.luot_xem DESC
+        `);
+        
         res.json({
             totals: totalsResult.recordset[0],
-            daily: dailyResult.recordset
+            daily: dailyResult.recordset,
+            videos: videosResult.recordset
         });
     } catch (err) {
         console.error('Error fetching admin live stats:', err);
