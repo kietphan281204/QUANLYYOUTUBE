@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://latinas-athletes-tissue-mesa.trycloudflare.com';
+const BASE_URL = 'https://amd-floors-classified-nature.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
