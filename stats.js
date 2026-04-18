@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://never-eleven-decades-vacation.trycloudflare.com';
+const BASE_URL = 'https://agency-italic-sprint-brown.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');

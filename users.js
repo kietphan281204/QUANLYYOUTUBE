@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://never-eleven-decades-vacation.trycloudflare.com';
+const BASE_URL = 'https://agency-italic-sprint-brown.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements
