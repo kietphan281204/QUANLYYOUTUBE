@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://puzzles-blanket-reg-issn.trycloudflare.com';
+const BASE_URL = 'https://removal-deny-approval-enjoy.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
@@ -139,21 +139,47 @@ function renderChart(dailyData) {
     const likes = [];
     const comments = [];
 
-    const today = new Date();
+    // Build a lookup map from server daily data
+    const dailyMap = {};
+    (dailyData || []).forEach(item => {
+        if (!item || !item.date) return;
+        
+        // Parse date reliably (avoiding timezone shifts for YYYY-MM-DD strings)
+        let dateKey;
+        if (typeof item.date === 'string') {
+            dateKey = item.date.split('T')[0]; // Works for "YYYY-MM-DD" and "YYYY-MM-DDTHH:mm:ss"
+        } else {
+            const dt = new Date(item.date);
+            const y = dt.getFullYear();
+            const m = String(dt.getMonth() + 1).padStart(2, '0');
+            const d = String(dt.getDate()).padStart(2, '0');
+            dateKey = `${y}-${m}-${d}`;
+        }
+        
+        dailyMap[dateKey] = {
+            views: Number(item.views) || 0,
+            likes: Number(item.likes) || 0,
+            comments: Number(item.comments) || 0
+        };
+    });
+
+    const now = new Date();
+    // Use a fixed "today" at 00:00:00 to avoid mid-day issues
+    const startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    
     // Start from 59 days ago to today
     for (let i = 59; i >= 0; i--) {
-        const d = new Date();
-        d.setDate(today.getDate() - i);
+        const d = new Date(startDate);
+        d.setDate(startDate.getDate() - i);
         
-        // Format local date correctly avoiding timezone issues: YYYY-MM-DD
         const year = d.getFullYear();
         const month = String(d.getMonth() + 1).padStart(2, '0');
         const day = String(d.getDate()).padStart(2, '0');
         const dateStr = `${year}-${month}-${day}`;
-        
+
         labels.push(dateStr);
-        
-        const dataPoint = dailyData.find(item => item.date === dateStr);
+
+        const dataPoint = dailyMap[dateStr];
         if (dataPoint) {
             views.push(dataPoint.views);
             likes.push(dataPoint.likes);
