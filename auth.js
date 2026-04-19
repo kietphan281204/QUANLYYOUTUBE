@@ -1,4 +1,4 @@
-const BASE_URL = 'https://package-prisoners-trinity-theory.trycloudflare.com';
+const BASE_URL = 'https://pas-lloyd-pamela-quality.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
