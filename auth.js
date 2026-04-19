@@ -1,4 +1,4 @@
-const BASE_URL = 'https://kentucky-clips-fabric-martha.trycloudflare.com';
+const BASE_URL = 'https://probe-represents-spot-collective.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

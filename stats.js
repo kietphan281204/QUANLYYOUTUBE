@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://kentucky-clips-fabric-martha.trycloudflare.com';
+const BASE_URL = 'https://probe-represents-spot-collective.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
