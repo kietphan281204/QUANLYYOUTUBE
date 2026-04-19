@@ -1,4 +1,4 @@
-const BASE_URL = 'https://electronics-diane-weather-residential.trycloudflare.com';
+const BASE_URL = 'https://package-prisoners-trinity-theory.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
