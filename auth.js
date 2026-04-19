@@ -1,4 +1,4 @@
-const BASE_URL = 'https://herbal-inns-diagram-impression.trycloudflare.com';
+const BASE_URL = 'https://arcade-scientists-willing-reaches.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

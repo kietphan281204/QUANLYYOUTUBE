@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://herbal-inns-diagram-impression.trycloudflare.com';
+const BASE_URL = 'https://arcade-scientists-willing-reaches.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
