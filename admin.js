@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://reaching-common-tags-heel.trycloudflare.com';
+const BASE_URL = 'https://electronics-diane-weather-residential.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
