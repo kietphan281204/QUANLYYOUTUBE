@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://pas-lloyd-pamela-quality.trycloudflare.com';
+const BASE_URL = 'https://kentucky-clips-fabric-martha.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');

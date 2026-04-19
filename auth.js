@@ -1,4 +1,4 @@
-const BASE_URL = 'https://pas-lloyd-pamela-quality.trycloudflare.com';
+const BASE_URL = 'https://kentucky-clips-fabric-martha.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
