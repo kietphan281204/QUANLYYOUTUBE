@@ -335,28 +335,9 @@ app.get('/api/admin/stats/overall', async (req, res) => {
                 (SELECT COUNT(*) FROM luot_thich) as total_likes,
                 (SELECT COUNT(*) FROM binh_luan) as total_comments
         `);
+        const totals = totalsResult.recordset[0];
         
-        // 2. Get daily stats (Last 60 days)
-        // Grouping by date from transaction tables for Likes and Comments
-        // For Views, we still need to rely on the thong_ke snapshot table for historical daily data
-        const dailyResult = await pool.request().query(`
-            SELECT 
-                ISNULL(t.date, ISNULL(l.date, c.date)) as date,
-                ISNULL(t.views, 0) as views,
-                ISNULL(l.likes, 0) as likes,
-                ISNULL(c.comments, 0) as comments
-            FROM 
-                (SELECT CONVERT(VARCHAR(10), ngay, 120) as date, SUM(so_luot_xem) as views FROM thong_ke WHERE ngay >= DATEADD(day, -60, GETDATE()) GROUP BY CONVERT(VARCHAR(10), ngay, 120)) t
-            FULL OUTER JOIN 
-                (SELECT CONVERT(VARCHAR(10), ngay_tao, 120) as date, COUNT(*) as likes FROM luot_thich WHERE ngay_tao >= DATEADD(day, -60, GETDATE()) GROUP BY CONVERT(VARCHAR(10), ngay_tao, 120)) l
-            ON t.date = l.date
-            FULL OUTER JOIN 
-                (SELECT CONVERT(VARCHAR(10), ngay_tao, 120) as date, COUNT(*) as comments FROM binh_luan WHERE ngay_tao >= DATEADD(day, -60, GETDATE()) GROUP BY CONVERT(VARCHAR(10), ngay_tao, 120)) c
-            ON ISNULL(t.date, l.date) = c.date
-            ORDER BY date ASC
-        `);
-        
-        // 3. Get detailed video list with stats
+        // 2. Get detailed video list with stats
         const videosResult = await pool.request().query(`
             SELECT 
                 v.video_id, 
@@ -371,10 +352,61 @@ app.get('/api/admin/stats/overall', async (req, res) => {
             LEFT JOIN nguoi_dung u ON v.nguoi_dung_id = u.nguoi_dung_id
             ORDER BY v.luot_xem DESC
         `);
+
+        // 3. Get daily stats (Last 60 days)
+        // For Likes and Comments, transaction tables are 100% accurate daily logs
+        // For Views, we use thong_ke table for history and attribute the remainder to the current date
+        
+        const viewsData = await pool.request().query(`
+            SELECT CONVERT(VARCHAR(10), ngay, 120) as date, SUM(so_luot_xem) as views 
+            FROM thong_ke 
+            WHERE ngay >= DATEADD(day, -60, GETDATE()) 
+            GROUP BY CONVERT(VARCHAR(10), ngay, 120)
+        `);
+        
+        const likesData = await pool.request().query(`
+            SELECT CONVERT(VARCHAR(10), ngay_tao, 120) as date, COUNT(*) as likes 
+            FROM luot_thich 
+            WHERE ngay_tao >= DATEADD(day, -60, GETDATE()) 
+            GROUP BY CONVERT(VARCHAR(10), ngay_tao, 120)
+        `);
+        
+        const commentsData = await pool.request().query(`
+            SELECT CONVERT(VARCHAR(10), ngay_tao, 120) as date, COUNT(*) as comments 
+            FROM binh_luan 
+            WHERE ngay_tao >= DATEADD(day, -60, GETDATE()) 
+            GROUP BY CONVERT(VARCHAR(10), ngay_tao, 120)
+        `);
+
+        // Combine all dates
+        const datesMap = {};
+        const allData = [...viewsData.recordset, ...likesData.recordset, ...commentsData.recordset];
+        allData.forEach(item => {
+            if (!item.date) return;
+            if (!datesMap[item.date]) datesMap[item.date] = { date: item.date, views: 0, likes: 0, comments: 0 };
+            if (item.views !== undefined) datesMap[item.date].views += item.views;
+            if (item.likes !== undefined) datesMap[item.date].likes += item.likes;
+            if (item.comments !== undefined) datesMap[item.date].comments += item.comments;
+        });
+
+        // 3. Handle unaccounted views (Real Total - Sum of Thong Ke)
+        // Since we don't have a live view log, we attribute the difference to "Today" to keep numbers consistent
+        const sumTkViewsRes = await pool.request().query("SELECT ISNULL(SUM(so_luot_xem), 0) as s FROM thong_ke");
+        const sumTkViews = sumTkViewsRes.recordset[0].s;
+        const unaccountedViews = Math.max(0, totals.total_views - sumTkViews);
+        
+        const todayStr = new Date().toISOString().split('T')[0];
+        if (!datesMap[todayStr]) {
+            datesMap[todayStr] = { date: todayStr, views: unaccountedViews, likes: 0, comments: 0 };
+        } else {
+            datesMap[todayStr].views += unaccountedViews;
+        }
+
+        const dailySorted = Object.values(datesMap).sort((a, b) => a.date.localeCompare(b.date));
         
         res.json({
-            totals: totalsResult.recordset[0],
-            daily: dailyResult.recordset,
+            totals: totals,
+            daily: dailySorted,
             videos: videosResult.recordset
         });
     } catch (err) {

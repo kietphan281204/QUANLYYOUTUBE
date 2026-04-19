@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://removal-deny-approval-enjoy.trycloudflare.com';
+const BASE_URL = 'https://herbal-inns-diagram-impression.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements

@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://removal-deny-approval-enjoy.trycloudflare.com';
+const BASE_URL = 'https://herbal-inns-diagram-impression.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');

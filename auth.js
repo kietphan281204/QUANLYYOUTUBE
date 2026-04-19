@@ -1,4 +1,4 @@
-const BASE_URL = 'https://removal-deny-approval-enjoy.trycloudflare.com';
+const BASE_URL = 'https://herbal-inns-diagram-impression.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
