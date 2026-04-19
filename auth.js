@@ -1,4 +1,4 @@
-const BASE_URL = 'https://arcade-scientists-willing-reaches.trycloudflare.com';
+const BASE_URL = 'https://cheapest-publishing-project-motel.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

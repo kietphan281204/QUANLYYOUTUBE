@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://arcade-scientists-willing-reaches.trycloudflare.com';
+const BASE_URL = 'https://cheapest-publishing-project-motel.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
