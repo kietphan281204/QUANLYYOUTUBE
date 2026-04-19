@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://prix-tropical-eating-governing.trycloudflare.com';
+const BASE_URL = 'https://puzzles-blanket-reg-issn.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
@@ -133,11 +133,37 @@ let myChart; // Global chart instance
 function renderChart(dailyData) {
     const ctx = document.getElementById('statsChart').getContext('2d');
     
-    // Sort and fill gaps if necessary (optional improvement)
-    const labels = dailyData.map(d => d.date);
-    const views = dailyData.map(d => d.views);
-    const likes = dailyData.map(d => d.likes);
-    const comments = dailyData.map(d => d.comments);
+    // Fill gaps to make timeline continuous (60 days)
+    const labels = [];
+    const views = [];
+    const likes = [];
+    const comments = [];
+
+    const today = new Date();
+    // Start from 59 days ago to today
+    for (let i = 59; i >= 0; i--) {
+        const d = new Date();
+        d.setDate(today.getDate() - i);
+        
+        // Format local date correctly avoiding timezone issues: YYYY-MM-DD
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        const dateStr = `${year}-${month}-${day}`;
+        
+        labels.push(dateStr);
+        
+        const dataPoint = dailyData.find(item => item.date === dateStr);
+        if (dataPoint) {
+            views.push(dataPoint.views);
+            likes.push(dataPoint.likes);
+            comments.push(dataPoint.comments);
+        } else {
+            views.push(0);
+            likes.push(0);
+            comments.push(0);
+        }
+    }
 
     if (myChart) myChart.destroy();
 

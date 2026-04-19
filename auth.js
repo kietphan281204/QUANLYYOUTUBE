@@ -1,4 +1,4 @@
-const BASE_URL = 'https://prix-tropical-eating-governing.trycloudflare.com';
+const BASE_URL = 'https://puzzles-blanket-reg-issn.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

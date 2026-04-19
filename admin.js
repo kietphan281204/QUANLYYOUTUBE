@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://prix-tropical-eating-governing.trycloudflare.com';
+const BASE_URL = 'https://puzzles-blanket-reg-issn.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 

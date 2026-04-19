@@ -346,7 +346,7 @@ app.get('/api/admin/stats/overall', async (req, res) => {
                 ISNULL(l.likes, 0) as likes,
                 ISNULL(c.comments, 0) as comments
             FROM 
-                (SELECT CONVERT(VARCHAR(10), ngay, 120) as date, SUM(so_luot_xem) as views FROM [thong_ke] WHERE ngay >= DATEADD(day, -60, GETDATE()) GROUP BY CONVERT(VARCHAR(10), ngay, 120)) t
+                (SELECT CONVERT(VARCHAR(10), ngay_tao, 120) as date, SUM(luot_xem) as views FROM video WHERE ngay_tao >= DATEADD(day, -60, GETDATE()) GROUP BY CONVERT(VARCHAR(10), ngay_tao, 120)) t
             FULL OUTER JOIN 
                 (SELECT CONVERT(VARCHAR(10), ngay_tao, 120) as date, COUNT(*) as likes FROM luot_thich WHERE ngay_tao >= DATEADD(day, -60, GETDATE()) GROUP BY CONVERT(VARCHAR(10), ngay_tao, 120)) l
             ON t.date = l.date
