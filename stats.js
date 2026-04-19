@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://cheapest-publishing-project-motel.trycloudflare.com';
+const BASE_URL = 'https://reaching-common-tags-heel.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
