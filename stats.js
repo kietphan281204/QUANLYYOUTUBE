@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://probe-represents-spot-collective.trycloudflare.com';
+const BASE_URL = 'https://holiday-phenomenon-arc-con.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');

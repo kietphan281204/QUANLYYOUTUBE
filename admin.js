@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://probe-represents-spot-collective.trycloudflare.com';
+const BASE_URL = 'https://holiday-phenomenon-arc-con.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
