@@ -1,4 +1,4 @@
-const BASE_URL = 'https://holiday-phenomenon-arc-con.trycloudflare.com';
+const BASE_URL = 'https://jelsoft-induction-reliance-anchor.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
