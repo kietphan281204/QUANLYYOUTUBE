@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://jelsoft-induction-reliance-anchor.trycloudflare.com';
+const BASE_URL = 'https://knew-inc-luis-montgomery.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements

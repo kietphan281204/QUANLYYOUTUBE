@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://jelsoft-induction-reliance-anchor.trycloudflare.com';
+const BASE_URL = 'https://knew-inc-luis-montgomery.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
