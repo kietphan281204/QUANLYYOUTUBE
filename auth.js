@@ -1,4 +1,4 @@
-const BASE_URL = 'https://knew-inc-luis-montgomery.trycloudflare.com';
+const BASE_URL = 'https://consolidation-enhancement-adjusted-regarded.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

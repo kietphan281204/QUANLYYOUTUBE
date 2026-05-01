@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://knew-inc-luis-montgomery.trycloudflare.com';
+const BASE_URL = 'https://consolidation-enhancement-adjusted-regarded.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
