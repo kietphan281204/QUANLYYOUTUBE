@@ -1,4 +1,4 @@
-const BASE_URL = 'https://counties-charming-missile-money.trycloudflare.com';
+const BASE_URL = 'https://premium-constant-succeed-dogs.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
