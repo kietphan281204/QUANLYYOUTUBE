@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://inquiry-code-vacations-periods.trycloudflare.com';
+const BASE_URL = 'https://portion-ata-vegetable-screening.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements

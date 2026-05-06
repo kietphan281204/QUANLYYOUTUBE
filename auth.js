@@ -1,4 +1,4 @@
-const BASE_URL = 'https://inquiry-code-vacations-periods.trycloudflare.com';
+const BASE_URL = 'https://portion-ata-vegetable-screening.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
