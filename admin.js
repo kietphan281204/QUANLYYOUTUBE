@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://valve-activists-ozone-metres.trycloudflare.com';
+const BASE_URL = 'https://inquiry-code-vacations-periods.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
