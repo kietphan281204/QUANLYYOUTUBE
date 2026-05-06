@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://balloon-fridge-horizontal-aka.trycloudflare.com';
+const BASE_URL = 'https://counties-charming-missile-money.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');

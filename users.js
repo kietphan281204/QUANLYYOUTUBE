@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://balloon-fridge-horizontal-aka.trycloudflare.com';
+const BASE_URL = 'https://counties-charming-missile-money.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements

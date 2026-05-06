@@ -1,4 +1,4 @@
-const BASE_URL = 'https://balloon-fridge-horizontal-aka.trycloudflare.com';
+const BASE_URL = 'https://counties-charming-missile-money.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
