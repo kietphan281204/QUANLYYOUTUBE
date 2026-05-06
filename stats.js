@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://portion-ata-vegetable-screening.trycloudflare.com';
+const BASE_URL = 'https://balloon-fridge-horizontal-aka.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');

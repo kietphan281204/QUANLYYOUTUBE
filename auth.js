@@ -1,4 +1,4 @@
-const BASE_URL = 'https://portion-ata-vegetable-screening.trycloudflare.com';
+const BASE_URL = 'https://balloon-fridge-horizontal-aka.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
