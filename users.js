@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://consolidation-enhancement-adjusted-regarded.trycloudflare.com';
+const BASE_URL = 'https://valve-activists-ozone-metres.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements

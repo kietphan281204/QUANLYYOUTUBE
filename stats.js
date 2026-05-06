@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://consolidation-enhancement-adjusted-regarded.trycloudflare.com';
+const BASE_URL = 'https://valve-activists-ozone-metres.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
