@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://pitch-parties-globe-narrow.trycloudflare.com';
+const BASE_URL = 'https://robust-geographic-simply-forth.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');

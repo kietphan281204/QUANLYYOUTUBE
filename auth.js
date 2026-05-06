@@ -1,4 +1,4 @@
-const BASE_URL = 'https://pitch-parties-globe-narrow.trycloudflare.com';
+const BASE_URL = 'https://robust-geographic-simply-forth.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

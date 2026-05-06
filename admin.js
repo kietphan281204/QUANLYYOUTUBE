@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://pitch-parties-globe-narrow.trycloudflare.com';
+const BASE_URL = 'https://robust-geographic-simply-forth.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
