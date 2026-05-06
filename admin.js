@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://premium-constant-succeed-dogs.trycloudflare.com';
+const BASE_URL = 'https://pitch-parties-globe-narrow.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 

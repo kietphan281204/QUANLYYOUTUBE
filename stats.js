@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://premium-constant-succeed-dogs.trycloudflare.com';
+const BASE_URL = 'https://pitch-parties-globe-narrow.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
