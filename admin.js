@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://commentary-recorder-strikes-fresh.trycloudflare.com';
+const BASE_URL = 'https://eastern-analytical-pulse-commissioners.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
