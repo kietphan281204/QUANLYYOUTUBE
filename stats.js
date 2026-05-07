@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://remember-statement-reprints-witch.trycloudflare.com';
+const BASE_URL = 'https://drawn-utah-rings-sie.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
