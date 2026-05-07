@@ -1,4 +1,4 @@
-const BASE_URL = 'https://robust-geographic-simply-forth.trycloudflare.com';
+const BASE_URL = 'https://genealogy-puts-institutional-landing.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
