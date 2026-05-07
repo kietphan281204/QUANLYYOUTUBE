@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://genealogy-puts-institutional-landing.trycloudflare.com';
+const BASE_URL = 'https://commentary-recorder-strikes-fresh.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements

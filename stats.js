@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://genealogy-puts-institutional-landing.trycloudflare.com';
+const BASE_URL = 'https://commentary-recorder-strikes-fresh.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
