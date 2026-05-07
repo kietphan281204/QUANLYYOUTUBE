@@ -1,4 +1,4 @@
-const BASE_URL = 'https://eastern-analytical-pulse-commissioners.trycloudflare.com';
+const BASE_URL = 'https://represented-null-simply-museum.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

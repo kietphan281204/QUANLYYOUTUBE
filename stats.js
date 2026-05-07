@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://eastern-analytical-pulse-commissioners.trycloudflare.com';
+const BASE_URL = 'https://represented-null-simply-museum.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
