@@ -1,4 +1,4 @@
-const BASE_URL = 'https://reported-grew-telecharger-street.trycloudflare.com';
+const BASE_URL = 'https://punch-joshua-vault-largest.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://reported-grew-telecharger-street.trycloudflare.com';
+const BASE_URL = 'https://punch-joshua-vault-largest.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 

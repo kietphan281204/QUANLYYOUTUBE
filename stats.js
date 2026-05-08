@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://reported-grew-telecharger-street.trycloudflare.com';
+const BASE_URL = 'https://punch-joshua-vault-largest.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
