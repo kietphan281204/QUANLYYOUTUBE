@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://text-combination-unlimited-upload.trycloudflare.com';
+const BASE_URL = 'https://objects-livestock-automation-headset.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 

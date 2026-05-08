@@ -1,4 +1,4 @@
-const BASE_URL = 'https://text-combination-unlimited-upload.trycloudflare.com';
+const BASE_URL = 'https://objects-livestock-automation-headset.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
