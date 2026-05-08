@@ -1,4 +1,4 @@
-const BASE_URL = 'https://drawn-utah-rings-sie.trycloudflare.com';
+const BASE_URL = 'https://corner-undo-product-gis.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

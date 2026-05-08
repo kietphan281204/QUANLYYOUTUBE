@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://drawn-utah-rings-sie.trycloudflare.com';
+const BASE_URL = 'https://corner-undo-product-gis.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
