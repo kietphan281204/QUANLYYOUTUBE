@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://corner-undo-product-gis.trycloudflare.com';
+const BASE_URL = 'https://text-combination-unlimited-upload.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements
