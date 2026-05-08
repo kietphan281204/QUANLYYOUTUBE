@@ -1,4 +1,4 @@
-const BASE_URL = 'https://punch-joshua-vault-largest.trycloudflare.com';
+const BASE_URL = 'https://lover-inspection-viewed-chicago.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
