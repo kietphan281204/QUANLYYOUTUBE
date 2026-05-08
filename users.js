@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://alias-availability-won-classified.trycloudflare.com';
+const BASE_URL = 'https://reported-grew-telecharger-street.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements
