@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://objects-livestock-automation-headset.trycloudflare.com';
+const BASE_URL = 'https://alias-availability-won-classified.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements
