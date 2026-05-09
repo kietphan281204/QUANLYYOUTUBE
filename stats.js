@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://lover-inspection-viewed-chicago.trycloudflare.com';
+const BASE_URL = 'https://town-month-bread-mon.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
