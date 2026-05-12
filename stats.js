@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://mpg-tba-unfortunately-lexington.trycloudflare.com';
+const BASE_URL = 'https://primarily-surveillance-thee-inquiry.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');

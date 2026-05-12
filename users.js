@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://mpg-tba-unfortunately-lexington.trycloudflare.com';
+const BASE_URL = 'https://primarily-surveillance-thee-inquiry.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements
