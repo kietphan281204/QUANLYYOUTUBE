@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://town-month-bread-mon.trycloudflare.com';
+const BASE_URL = 'https://mpg-tba-unfortunately-lexington.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 

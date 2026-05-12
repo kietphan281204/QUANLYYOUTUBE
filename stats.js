@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://town-month-bread-mon.trycloudflare.com';
+const BASE_URL = 'https://mpg-tba-unfortunately-lexington.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
