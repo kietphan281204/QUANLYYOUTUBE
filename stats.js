@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://primarily-surveillance-thee-inquiry.trycloudflare.com';
+const BASE_URL = 'https://seeing-circle-explanation-televisions.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');

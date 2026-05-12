@@ -1,4 +1,4 @@
-const BASE_URL = 'https://primarily-surveillance-thee-inquiry.trycloudflare.com';
+const BASE_URL = 'https://seeing-circle-explanation-televisions.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

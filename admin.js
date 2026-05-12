@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://primarily-surveillance-thee-inquiry.trycloudflare.com';
+const BASE_URL = 'https://seeing-circle-explanation-televisions.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
