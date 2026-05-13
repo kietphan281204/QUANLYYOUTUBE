@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://respondent-personalized-parliament-distributions.trycloudflare.com';
+const BASE_URL = 'https://fast-expects-initiated-offline.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');

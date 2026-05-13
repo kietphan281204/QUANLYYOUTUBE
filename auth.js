@@ -1,4 +1,4 @@
-const BASE_URL = 'https://respondent-personalized-parliament-distributions.trycloudflare.com';
+const BASE_URL = 'https://fast-expects-initiated-offline.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

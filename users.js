@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://respondent-personalized-parliament-distributions.trycloudflare.com';
+const BASE_URL = 'https://fast-expects-initiated-offline.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements
