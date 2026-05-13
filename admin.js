@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://seeing-circle-explanation-televisions.trycloudflare.com';
+const BASE_URL = 'https://respondent-personalized-parliament-distributions.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 

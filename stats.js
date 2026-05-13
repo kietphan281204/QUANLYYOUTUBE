@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://seeing-circle-explanation-televisions.trycloudflare.com';
+const BASE_URL = 'https://respondent-personalized-parliament-distributions.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
