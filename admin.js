@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://fast-expects-initiated-offline.trycloudflare.com';
+const BASE_URL = 'https://lamb-plumbing-resume-stanford.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 

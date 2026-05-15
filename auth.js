@@ -1,4 +1,4 @@
-const BASE_URL = 'https://fast-expects-initiated-offline.trycloudflare.com';
+const BASE_URL = 'https://lamb-plumbing-resume-stanford.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

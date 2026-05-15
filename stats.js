@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://fast-expects-initiated-offline.trycloudflare.com';
+const BASE_URL = 'https://lamb-plumbing-resume-stanford.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
