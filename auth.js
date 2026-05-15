@@ -1,4 +1,4 @@
-const BASE_URL = 'https://discusses-southeast-financial-mostly.trycloudflare.com';
+const BASE_URL = 'https://photography-resorts-gif-beginner.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

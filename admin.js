@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://discusses-southeast-financial-mostly.trycloudflare.com';
+const BASE_URL = 'https://photography-resorts-gif-beginner.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
