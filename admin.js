@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://lamb-plumbing-resume-stanford.trycloudflare.com';
+const BASE_URL = 'https://discusses-southeast-financial-mostly.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 
