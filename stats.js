@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://angela-gifts-franchise-engage.trycloudflare.com';
+const BASE_URL = 'https://consensus-biggest-thick-chronic.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');

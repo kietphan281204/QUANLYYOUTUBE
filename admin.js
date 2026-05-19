@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://angela-gifts-franchise-engage.trycloudflare.com';
+const BASE_URL = 'https://consensus-biggest-thick-chronic.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 

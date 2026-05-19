@@ -1,4 +1,4 @@
-const BASE_URL = 'https://angela-gifts-franchise-engage.trycloudflare.com';
+const BASE_URL = 'https://consensus-biggest-thick-chronic.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
