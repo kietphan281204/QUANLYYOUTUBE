@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://nutritional-supplemental-toddler-lamb.trycloudflare.com';
+const BASE_URL = 'https://karaoke-radius-ran-widespread.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');

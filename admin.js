@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://nutritional-supplemental-toddler-lamb.trycloudflare.com';
+const BASE_URL = 'https://karaoke-radius-ran-widespread.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 

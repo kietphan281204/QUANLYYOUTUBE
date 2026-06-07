@@ -1,4 +1,4 @@
-const BASE_URL = 'https://nutritional-supplemental-toddler-lamb.trycloudflare.com';
+const BASE_URL = 'https://karaoke-radius-ran-widespread.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
