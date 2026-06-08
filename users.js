@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://karaoke-radius-ran-widespread.trycloudflare.com';
+const BASE_URL = 'https://california-international-isolation-flour.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements

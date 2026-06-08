@@ -1,4 +1,4 @@
-const BASE_URL = 'https://karaoke-radius-ran-widespread.trycloudflare.com';
+const BASE_URL = 'https://california-international-isolation-flour.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
