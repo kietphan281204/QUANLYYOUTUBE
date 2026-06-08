@@ -1,4 +1,4 @@
-const BASE_URL = 'https://sorts-thompson-domestic-advised.trycloudflare.com';
+const BASE_URL = 'https://buck-justin-interference-subscribers.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
