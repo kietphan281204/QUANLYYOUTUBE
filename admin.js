@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://california-international-isolation-flour.trycloudflare.com';
+const BASE_URL = 'https://sorts-thompson-domestic-advised.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 

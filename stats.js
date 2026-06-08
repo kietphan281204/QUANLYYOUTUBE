@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://california-international-isolation-flour.trycloudflare.com';
+const BASE_URL = 'https://sorts-thompson-domestic-advised.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
