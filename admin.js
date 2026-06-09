@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://buck-justin-interference-subscribers.trycloudflare.com';
+const BASE_URL = 'https://response-brooklyn-malpractice-things.trycloudflare.com';
 let allVideos = [];
 let currentFilter = 'all';
 

@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://buck-justin-interference-subscribers.trycloudflare.com';
+const BASE_URL = 'https://response-brooklyn-malpractice-things.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
