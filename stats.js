@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://response-brooklyn-malpractice-things.trycloudflare.com';
+const BASE_URL = 'https://lamps-scheduled-mine-continued.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');
