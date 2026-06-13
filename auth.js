@@ -1,4 +1,4 @@
-const BASE_URL = 'https://lamps-scheduled-mine-continued.trycloudflare.com';
+const BASE_URL = 'https://reflected-brunswick-opened-biz.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System
