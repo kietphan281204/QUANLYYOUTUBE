@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://reflected-brunswick-opened-biz.trycloudflare.com';
+const BASE_URL = 'https://sega-notify-certainly-leeds.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements
