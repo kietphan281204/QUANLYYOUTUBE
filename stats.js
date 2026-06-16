@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const BASE_URL = 'https://sega-notify-certainly-leeds.trycloudflare.com';
+const BASE_URL = 'https://rand-certain-yale-latinas.trycloudflare.com';
 
 // DOM Elements
 const viewsEl = document.getElementById('stat-total-views');

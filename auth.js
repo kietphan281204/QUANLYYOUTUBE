@@ -1,4 +1,4 @@
-const BASE_URL = 'https://sega-notify-certainly-leeds.trycloudflare.com';
+const BASE_URL = 'https://rand-certain-yale-latinas.trycloudflare.com';
 const loading = document.getElementById('global-loading');
 
 // Toast Notification System

@@ -30,7 +30,7 @@ window.logoutAdmin = function() {
 // ==================================
 
 // API Configuration
-const BASE_URL = 'https://sega-notify-certainly-leeds.trycloudflare.com';
+const BASE_URL = 'https://rand-certain-yale-latinas.trycloudflare.com';
 let allUsers = [];
 
 // DOM Elements
